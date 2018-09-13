@@ -165,7 +165,9 @@ int main()
 	cin >> k;
 	switch (k) {
 	case 1: ALAN();
-	case 2: TURING();
+	break;
+	case 2: TURING(); 
+	return 0l;
 	}
 
 
