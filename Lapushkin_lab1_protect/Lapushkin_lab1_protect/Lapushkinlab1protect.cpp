@@ -167,7 +167,7 @@ int main()
 	case 1: ALAN();
 	break;
 	case 2: TURING(); 
-	return 0l;
+	return 0;
 	}
 
 
