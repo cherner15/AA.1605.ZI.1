@@ -1,0 +1,3 @@
+﻿  vijiner.cpp
+c:\users\andre\desktop\lr1\vijiner\vijiner\vijiner.cpp(92): warning C4326: возвращаемый тип "main" должен быть "int", а не "void"
+  vijiner.vcxproj -> C:\Users\andre\Desktop\lr1\vijiner\Debug\vijiner.exe
