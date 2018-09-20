@@ -12,12 +12,12 @@ using namespace std;
 
 void Code(char* file, char* key)
 {
-	//setlocale(LC_ALL, "RU");
+	setlocale(LC_ALL, "RU");
 	char ch;
 	vector< char> tword;
 	vector< char> tkey;
-	ifstream d,k;
 	
+	ifstream d;
 	d.open(file);
 		while (!d.eof())
 		{
@@ -26,12 +26,11 @@ void Code(char* file, char* key)
 				tword.push_back(ch);
 				cout << ch;
 			}
-			cout << endl;
 		}
 	d.close();	
 	
 	//key
-	
+	ifstream k;
 	k.open(key);
 	while (!k.eof())
 	{
@@ -48,8 +47,8 @@ void Code(char* file, char* key)
 	int raznitsa = tword.size() - tkey.size();
 	for (int i = 0; i < raznitsa; i++)
 	{
-		 char ch1 = tkey[j];
-		tkey.push_back(ch1);
+		  ch = tkey[j];
+		tkey.push_back(ch);
 		j++;
 	}
 	//шифрование  Виженера
@@ -57,18 +56,18 @@ void Code(char* file, char* key)
 	int ztext;
 	for (int i = 0; i < tword.size(); i++)
 	{
-		int textasc = (int)(tword[i]);
-		int shifrasc = (int)(tkey[i]);
-		if (textasc + shifrasc < 256)
+		int text = (int)(tword[i]);
+		int shifr = (int)(tkey[i]);
+		if (text + shifr < 256)
 		{
-			ztext = shifrasc + textasc;
+			ztext = shifr + text;
 		}
 		else
 		{
-			ztext = shifrasc + textasc - 256;
+			ztext = shifr + text - 256;
 		}
-		char ch2 = (char)(ztext);
-		ztextvec.push_back(ch2);
+		char ch1 = (char)(ztext);
+		ztextvec.push_back(ch1);
 	}
 
 	//Запись в файл
@@ -82,7 +81,6 @@ void Code(char* file, char* key)
 		{
 			ostr << ztextvec[i];
 		}
-		cout << endl;
 		cout << "The recording was successful" << endl;
 		ostr.close();
 	}
@@ -102,7 +100,7 @@ void Decode(char* file,char* key)
 	vector< char> tkey;
 	ifstream d;
 	
-	d.open(file);
+	/*d.open(file);
 	while (!d.eof())
 	{
 		while (d.get(ch))
@@ -110,25 +108,46 @@ void Decode(char* file,char* key)
 			tword.push_back(ch);
 			cout << ch;
 		}
-		cout << endl;
 	}
-		d.close();
+    d.close();*/
 
+	string w;
+	cout << "Input file name for decode(name.txt)  " << endl;
+	cin >> w;
+	ifstream in(w);
+	if (in)
+	{
+		while (!in.eof())
+		{
+			while (in.get(ch))
+			{
+				tword.push_back(ch);
+				cout << ch;
+				
+			}cout << endl;
+		}
+		cout << endl;
+		cout << "The recording was successful" << endl;
+		in.close();
+	}
+	else
+	{
+		cerr << "The file did not open" << endl;
+		return;
+	}
 			//key
-			
 			ifstream k;
 			k.open(key);
-				while (!k.eof())
-				{
-					while (k.get(ch))
-					{
-						tkey.push_back(ch);
-						cout << ch;
-					}
-				}
+			while (!k.eof())
+			  {
+				while (k.get(ch))
+				 {
+					tkey.push_back(ch);
+					cout << ch;
+				 }
+		      }
             k.close();
 			
-
 			//делаем шифр длины текста
 			int j = 0;
 			int raznitsa = tword.size() - tkey.size();
@@ -158,7 +177,6 @@ void Decode(char* file,char* key)
 			}
 			//Запись в файл
 			string textz;
-			cout << endl;
 			cout << "Output file name(name.txt)  " << endl;
 			cin >> textz;
 			ofstream ostr(textz);
@@ -168,7 +186,6 @@ void Decode(char* file,char* key)
 				{
 					ostr << ztextvec[i];
 				}
-				cout << endl;
 				cout << "The recording was successful" << endl;
 				ostr.close();
 			}
@@ -182,8 +199,10 @@ void Decode(char* file,char* key)
 int main(int argc, char* argv[])
 {
 	Code(argv[1], argv[2]);
-	Decode(argv[1], argv[1]);
+	cout << " "<< endl;
+	Decode(argv[1], argv[2]);
 	return 0;
 }
 	
 
+ 
