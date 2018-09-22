@@ -7,71 +7,39 @@
 #include <string>
 #include <vector>
 using namespace std;
-
-vector<unsigned char> Word;
-vector<unsigned char> Encoded;
-vector<unsigned char> Key;
-vector<unsigned char> Decoded;
-
-void GetWord()
+void Encode(char* word, char* key, char* out)
 {
-	string name;
-	char ch;
-	ifstream f(name);
-	cout << "Введите название файла с текстом (без .TXT):" << endl;
-	cin >> name;
-	name = name + ".txt";
-	f.open(name);
-	while (!f.is_open()) {
-		cout << "Введите заново: " << endl;
-		cin >> name;
-		name = name + ".txt";
-		f.open(name);
-	}
+	vector<unsigned char> Word;
+	vector<unsigned char> Encoded;
+	vector<unsigned char> Key;
+	unsigned char ch, ci, cj;
+	int b, d, code, j;
+	char che;
+	ifstream f;
 	cout << "Исходный текст: ";
+	f.open(word);
 	while (!f.eof())
 	{
-		while (f.get(ch))
+		while (f.get(che))
 		{
-			Word.push_back(ch);
-			cout << ch;
+			Word.push_back(che);
+			cout << che;
 		}
 	}
-	cout << endl;
 	f.close();
-}
-
-void GetKey()
-{
-	string name;
-	char ch;
-	ifstream f(name);
-	cout << "\nВведите название файла с ключом (без .TXT):" << endl;
-	cin >> name;
-	name = name + ".txt";
-	f.open(name);
-	while (!f.is_open()) {
-		cout << "Введите заново: " << endl;
-		cin >> name;
-		name = name + ".txt";
-		f.open(name);
-	}
+	cout << endl;
+	f.open(key);
 	cout << "Ключ: ";
 	while (!f.eof())
 	{
-		while (f.get(ch))
+		while (f.get(che))
 		{
-			Key.push_back(ch);
-			cout << ch;
+			Key.push_back(che);
+			cout << che;
 		}
 	}
+	f.close();
 	cout << endl;
-}
-
-void Vizhener()
-{
-	unsigned char ch, ci, cj;
-	int b, d, code, j;
 	for (int i = 0; i < Word.size(); i++)
 	{
 		j = 0;
@@ -116,11 +84,46 @@ void Vizhener()
 			j++;
 		}
 	}
+	ofstream t;
+	cout << "Зашифрованный текст: ";
+	t.open(out);
+	for (int i = 0; i < Encoded.size(); i++)
+	{
+		cout << Encoded[i];
+		t << Encoded[i];
+	}
+	cout << endl;
+	t.close();
 }
 
-void Decode()
+void Decode(char* key, char* out, char* deout)
 {
-	for (int i = 0; i < Word.size(); i++)
+	vector<unsigned char> Decoded;
+	vector<unsigned char> Encoded;
+	vector<unsigned char> Key;
+	char che;
+	ifstream f;
+	f.open(out);
+	while (!f.eof())
+	{
+		while (f.get(che))
+		{
+			Encoded.push_back(che);
+			//cout << che;
+		}
+	}
+	f.close();
+	f.open(key);
+	while (!f.eof())
+	{
+		while (f.get(che))
+		{
+			Key.push_back(che);
+			//cout << che;
+		}
+	}
+	f.close();
+	for (int i = 0; i < Encoded.size(); i++)
 	{
 		unsigned char ch, ci, cj;
 		int b, d, code, j;
@@ -166,46 +169,23 @@ void Decode()
 			j++;
 		}
 	}
-}
-
-int main()
-{
-	setlocale(LC_ALL, "rus");
-	GetWord();
-	GetKey();
-	Vizhener();
-
-	string name, name1;
-	cout << "\nВведите название файла для вывода зашифрованного текста:" << endl;
-	cin >> name;
-	name = name + ".txt";
-	cout << "Зашифрованный текст: ";
-	ofstream f(name);
-	for (int i = 0; i < Encoded.size(); i++)
-	{
-		cout << Encoded[i];
-		f << Encoded[i];
-	}
-	cout << endl;
-
-	Decode();
-	cout << "\nВведите название файла для вывода расшифрованного текста:" << endl;
-	cin >> name1;
-	name1 = name1 + ".txt";
-	while (name == name1) {
-		cout << "Названия совпадают, введите заново: " << endl;
-		cin >> name1;
-		name1 = name1 + ".txt";
-		f.open(name);
-	}
+	ofstream d;
+	d.open(deout);
 	cout << "Расшифрованный текст: ";
-	ofstream fout(name1);
-	for (int i = 0; i < Encoded.size(); i++)
+	for (int i = 0; i < Decoded.size(); i++)
 	{
 		cout << Decoded[i];
-		fout << Decoded[i];
+		d << Decoded[i];
 	}
 	cout << endl;
+	d.close();
+}
+
+int main(int argc, char* argv[])
+{
+	setlocale(LC_ALL, "rus");
+	Encode(argv[1], argv[2], argv[3]);
+	Decode(argv[2], argv[3], argv[4]);
 	return 0;
 }
 
