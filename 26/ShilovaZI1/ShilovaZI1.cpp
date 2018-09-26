@@ -99,18 +99,6 @@ void Decode(char* file,char* key)
 	vector< char> tword;
 	vector< char> tkey;
 	ifstream d;
-	
-	/*d.open(file);
-	while (!d.eof())
-	{
-		while (d.get(ch))
-		{
-			tword.push_back(ch);
-			cout << ch;
-		}
-	}
-    d.close();*/
-
 	string w;
 	cout << "Input file name for decode(name.txt)  " << endl;
 	cin >> w;
