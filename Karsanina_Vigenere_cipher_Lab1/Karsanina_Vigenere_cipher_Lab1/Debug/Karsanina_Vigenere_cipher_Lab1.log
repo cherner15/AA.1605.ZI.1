@@ -1,7 +1,0 @@
-﻿  Source.cpp
-d:\c++\karsanina_vigenere_cipher_lab1\karsanina_vigenere_cipher_lab1\source.cpp(86): warning C4018: <: несоответствие типов со знаком и без знака
-d:\c++\karsanina_vigenere_cipher_lab1\karsanina_vigenere_cipher_lab1\source.cpp(111): warning C4018: <: несоответствие типов со знаком и без знака
-d:\c++\karsanina_vigenere_cipher_lab1\karsanina_vigenere_cipher_lab1\source.cpp(165): warning C4018: <: несоответствие типов со знаком и без знака
-d:\c++\karsanina_vigenere_cipher_lab1\karsanina_vigenere_cipher_lab1\source.cpp(189): warning C4018: <: несоответствие типов со знаком и без знака
-  Karsanina_Vigenere_cipher_Lab1.vcxproj -> D:\C++\Karsanina_Vigenere_cipher_Lab1\Debug\Karsanina_Vigenere_cipher_Lab1.exe
-  Karsanina_Vigenere_cipher_Lab1.vcxproj -> D:\C++\Karsanina_Vigenere_cipher_Lab1\Debug\Karsanina_Vigenere_cipher_Lab1.pdb (Partial PDB)
