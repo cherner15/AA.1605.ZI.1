@@ -1,0 +1,10 @@
+﻿  ChulkovaVizhL1.cpp
+ChulkovaVizhL1.cpp(48): warning C4018: <: несоответствие типов со знаком и без знака
+ChulkovaVizhL1.cpp(50): warning C4018: >: несоответствие типов со знаком и без знака
+ChulkovaVizhL1.cpp(66): warning C4018: <: несоответствие типов со знаком и без знака
+ChulkovaVizhL1.cpp(103): warning C4018: <: несоответствие типов со знаком и без знака
+ChulkovaVizhL1.cpp(105): warning C4018: >: несоответствие типов со знаком и без знака
+ChulkovaVizhL1.cpp(119): warning C4018: <: несоответствие типов со знаком и без знака
+  AssemblyInfo.obj : /DEBUG:FASTLINK не поддерживается, если присутствует управляемый код; выполняется перезапуск компоновки с /DEBUG:FULL
+  ChulkovaVizhL1.vcxproj -> C:\Users\asus\Documents\Visual Studio 2015\Projects\ChulkovaVizhL1\Debug\ChulkovaVizhL1.exe
+  ChulkovaVizhL1.vcxproj -> C:\Users\asus\Documents\Visual Studio 2015\Projects\ChulkovaVizhL1\Debug\ChulkovaVizhL1.pdb (Partial PDB)
