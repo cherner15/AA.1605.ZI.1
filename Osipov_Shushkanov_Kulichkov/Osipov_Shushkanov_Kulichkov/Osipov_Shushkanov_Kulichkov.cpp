@@ -1,175 +1,96 @@
-// Osipov_Shushkanov_Kulichkov.cpp : Defines the entry point for the console application.
+// Osipov_Shushkanov_Kulichkov.cpp: определяет точку входа для консольного приложения.
 //
 
 
 #include "stdafx.h"
-#include <iostream>
 #include <fstream>
+#include <iostream>
 #include <string>
-#include <vector>
+#include <cstring>
 using namespace std;
 
-vector<unsigned char> Text;
-vector<unsigned char> Encoded;
-vector<unsigned char> Key;
-vector<unsigned char> Decoded;
-
-void GetText(string name)
+int main(int argc, char *argv[])
 {
-	//string name;
-	char ch;
-	ifstream f(name);
-	//cout << "Введите название файла с текстом (без .TXT):" << endl;
-	//cin >> name;
-	name = name + ".txt";
-	f.open(name);
-	while (!f.is_open()) {
-		cout << "Введите заново: " << endl;
-		cin >> name;
-		name = name + ".txt";
-		f.open(name);
+	//setlocale(LC_ALL, "rus"); // корректное отображение Кириллицы
+	if (argc != 5){
+		return 0;
 	}
-	cout << "Исходный текст: ";
-	while (!f.eof())
-	{
-		while (f.get(ch))
+
+	string str;
+	string str1;
+	string str2;
+	char name;
+	char s1;
+	char s;
+	char *pass = argv[4];
+	int i, k;
+	string pass1;
+
+	
+
+	while (1) {
+		do
 		{
-			Text.push_back(ch);
-			cout << ch;
-		}
-	}
-	cout << endl;
-	f.close();
-}
-
-void GetKey(char a, char ch[10])
-{
-	int len = a;
-	//cout << "\nВведите длину ключа" << endl;
-	//cin >> len;
-	//cout << "\nВведите ключ" << endl;
-	//cin >> ch;
-	//while (!ch==0) {
-	//    cout << "Введите заново: " << endl;
-	// cin >> ch;
-	//}
-	Key.assign(ch, ch + len);
-	cout << "Ключ: ";
-	cout << ch;
-	cout << endl;
-}
-
-void Shifr_Koroley()
-{
-	unsigned char ch, ci, cj;
-	int b, d, code, j;
-	for (int i = 0; i < Text.size(); i++)
-	{
-		j = 0;
-		if (j > Key.size()) {
-			j = 0;
-		}
-		else
-		{
-			ch = Text[i];
-			b = (int)ch;
-			ci = Key[j];
-			d = (int)ci;
-			if ((d + b) <= 255)
+			cout << "Choose the action" << endl << "encode (1)" << endl << "decode (2)" << endl;
+			cin >> i;
+			switch (i)
 			{
-				code = (d + b);
-				cj = (char)code;
-				Encoded.push_back(cj);
-			}
-			else
+			case 1:
 			{
-				code = (d + b - 256);
-				cj = (char)code;
-				Encoded.push_back(cj);
-			}
-			j++;
-		}
-	}
-}
 
-void Decode()
-{
-	for (int i = 0; i < Text.size(); i++)
-	{
-		unsigned char ch, ci, cj;
-		int b, d, code, j;
-		j = 0;
-		if (j > Key.size()) {
-			j = 0;
-		}
-		else
-		{
-			ch = Encoded[i];
-			b = (int)ch;
-			ci = Key[j];
-			d = (int)ci;
-			if ((b - d) < 0)
+				str = argv[1];
+				ifstream fin(str, ios::binary); // открыли файл для чтения
+				if (!fin){
+					return 0;
+				}
+				str1 = argv[2];
+				ofstream fout(str1, ios::binary);
+				if (!fout){
+					return 0;
+				}
+
+				i = 0;
+				while (fin.get(s)) {
+					s1 = (char)((s + pass[(i) % (strlen(pass))] + 1) % 256);
+					fout << s1;
+					//cout << s1;
+					i++;
+				}
+				cout << "Mission complete" << endl;
+				fin.close();
+				fout.close();
+			}
+			break;
+
+			case 2:
 			{
-				code = (b - d + 256);
-				cj = (char)code;
-				Decoded.push_back(cj);
+				str1 = argv[2];
+				ifstream fin(str1, ios::binary); // открыли файл для чтения
+				if (!fin){
+					return 0;
+				}
+				str2 = argv[3];
+				ofstream fout(str2, ios::binary);
+				if (!fout){
+					return 0;
+				}
+				i = 0;
+				while (fin.get(s)) {
+					s1 = (char)((s + 255 - pass[(i) % (strlen(pass))]) % 256);
+					fout << s1;
+					//cout << s1;
+					i++;
+				}
+				cout << "Mission complete" << endl;
+				fin.close();
+				fout.close();
 			}
-			else
-			{
-				code = (b - d);
-				cj = (char)code;
-				Decoded.push_back(cj);
+			break;
+
+
 			}
-			j++;
-		}
+		} while (i<1 || i>2);
 	}
-}
-
-int main(int argc, char* argv[])
-{
-	for (int y = 0; y < argc; y++) {
-		cout << argv[y] << endl;
-	}
-
-	setlocale(LC_ALL, "rus");
-	GetText(argv[1]);
-	GetKey(*argv[2], argv[3]);
-	Shifr_Koroley();
-
-	string name, name1;
-	name = argv[4];
-	//cout << "\nВведите название файла для вывода зашифрованного текста:" << endl;
-	//cin >> name;
-	name = name + ".txt";
-	cout << "Зашифрованный текст: ";
-	ofstream f(name);
-	for (int i = 0; i < Encoded.size(); i++)
-	{
-		cout << Encoded[i];
-		f << Encoded[i];
-	}
-	cout << endl;
-
-	Decode();
-	name1 = argv[5];
-	//cout << "\nВведите название файла для вывода расшифрованного текста:" << endl;
-	//cin >> name1;
-	name1 = name1 + ".txt";
-	while (name == name1) {
-		cout << "Названия совпадают, введите заново: " << endl;
-		cin >> name1;
-		name1 = name1 + ".txt";
-		f.open(name);
-	}
-	cout << "Расшифрованный текст: ";
-	ofstream fout(name1);
-	for (int i = 0; i < Encoded.size(); i++)
-	{
-		cout << Decoded[i];
-		fout << Decoded[i];
-	}
-	cout << endl;
 	return 0;
 }
-
 

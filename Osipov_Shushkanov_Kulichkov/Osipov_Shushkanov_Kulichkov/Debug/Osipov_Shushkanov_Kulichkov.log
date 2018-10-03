@@ -1,29 +1,25 @@
-﻿Build started 26.09.2018 12:06:25.
-     1>Project "F:\plab1_var4\Osipov_Shushkanov_Kulichkov\Osipov_Shushkanov_Kulichkov\Osipov_Shushkanov_Kulichkov.vcxproj" on node 2 (Rebuild target(s)).
+﻿Build started 03.10.2018 12:46:49.
+     1>Project "F:\Osipov_Shushkanov_Kulichkov\Osipov_Shushkanov_Kulichkov\Osipov_Shushkanov_Kulichkov.vcxproj" on node 2 (Rebuild target(s)).
      1>_PrepareForClean:
-         Deleting file "Debug\Osipov_S.F1E75D0A.tlog\Osipov_Shushkanov_Kulichkov.lastbuildstate".
+         Deleting file "Debug\Osipov_S.0A50BF8A.tlog\Osipov_Shushkanov_Kulichkov.lastbuildstate".
        InitializeBuildStatus:
-         Creating "Debug\Osipov_S.F1E75D0A.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+         Touching "Debug\Osipov_S.0A50BF8A.tlog\unsuccessfulbuild".
        ClCompile:
-         D:\VS2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"Debug\Osipov_Shushkanov_Kulichkov.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         D:\VS2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"Debug\Osipov_Shushkanov_Kulichkov.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
          stdafx.cpp
-         D:\VS2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\Osipov_Shushkanov_Kulichkov.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Osipov_Shushkanov_Kulichkov.cpp
+         D:\VS2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\Osipov_Shushkanov_Kulichkov.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Osipov_Shushkanov_Kulichkov.cpp
          Osipov_Shushkanov_Kulichkov.cpp
-     1>f:\plab1_var4\osipov_shushkanov_kulichkov\osipov_shushkanov_kulichkov\osipov_shushkanov_kulichkov.cpp(66): warning C4018: '<' : signed/unsigned mismatch
-     1>f:\plab1_var4\osipov_shushkanov_kulichkov\osipov_shushkanov_kulichkov\osipov_shushkanov_kulichkov.cpp(69): warning C4018: '>' : signed/unsigned mismatch
-     1>f:\plab1_var4\osipov_shushkanov_kulichkov\osipov_shushkanov_kulichkov\osipov_shushkanov_kulichkov.cpp(97): warning C4018: '<' : signed/unsigned mismatch
-     1>f:\plab1_var4\osipov_shushkanov_kulichkov\osipov_shushkanov_kulichkov\osipov_shushkanov_kulichkov.cpp(102): warning C4018: '>' : signed/unsigned mismatch
-     1>f:\plab1_var4\osipov_shushkanov_kulichkov\osipov_shushkanov_kulichkov\osipov_shushkanov_kulichkov.cpp(146): warning C4018: '<' : signed/unsigned mismatch
-     1>f:\plab1_var4\osipov_shushkanov_kulichkov\osipov_shushkanov_kulichkov\osipov_shushkanov_kulichkov.cpp(166): warning C4018: '<' : signed/unsigned mismatch
+     1>f:\osipov_shushkanov_kulichkov\osipov_shushkanov_kulichkov\osipov_shushkanov_kulichkov.cpp(22): warning C4101: 'name' : unreferenced local variable
+     1>f:\osipov_shushkanov_kulichkov\osipov_shushkanov_kulichkov\osipov_shushkanov_kulichkov.cpp(26): warning C4101: 'k' : unreferenced local variable
        Link:
-         D:\VS2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\plab1_var4\Osipov_Shushkanov_Kulichkov\Debug\Osipov_Shushkanov_Kulichkov.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"F:\plab1_var4\Osipov_Shushkanov_Kulichkov\Debug\Osipov_Shushkanov_Kulichkov.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\plab1_var4\Osipov_Shushkanov_Kulichkov\Debug\Osipov_Shushkanov_Kulichkov.lib" /MACHINE:X86 Debug\Osipov_Shushkanov_Kulichkov.obj
+         D:\VS2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\Osipov_Shushkanov_Kulichkov\Debug\Osipov_Shushkanov_Kulichkov.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"F:\Osipov_Shushkanov_Kulichkov\Debug\Osipov_Shushkanov_Kulichkov.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\Osipov_Shushkanov_Kulichkov\Debug\Osipov_Shushkanov_Kulichkov.lib" /MACHINE:X86 Debug\Osipov_Shushkanov_Kulichkov.obj
          Debug\stdafx.obj
-         Osipov_Shushkanov_Kulichkov.vcxproj -> F:\plab1_var4\Osipov_Shushkanov_Kulichkov\Debug\Osipov_Shushkanov_Kulichkov.exe
+         Osipov_Shushkanov_Kulichkov.vcxproj -> F:\Osipov_Shushkanov_Kulichkov\Debug\Osipov_Shushkanov_Kulichkov.exe
        FinalizeBuildStatus:
-         Deleting file "Debug\Osipov_S.F1E75D0A.tlog\unsuccessfulbuild".
-         Touching "Debug\Osipov_S.F1E75D0A.tlog\Osipov_Shushkanov_Kulichkov.lastbuildstate".
-     1>Done Building Project "F:\plab1_var4\Osipov_Shushkanov_Kulichkov\Osipov_Shushkanov_Kulichkov\Osipov_Shushkanov_Kulichkov.vcxproj" (Rebuild target(s)).
+         Deleting file "Debug\Osipov_S.0A50BF8A.tlog\unsuccessfulbuild".
+         Touching "Debug\Osipov_S.0A50BF8A.tlog\Osipov_Shushkanov_Kulichkov.lastbuildstate".
+     1>Done Building Project "F:\Osipov_Shushkanov_Kulichkov\Osipov_Shushkanov_Kulichkov\Osipov_Shushkanov_Kulichkov.vcxproj" (Rebuild target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:14.08
+Time Elapsed 00:00:35.56
