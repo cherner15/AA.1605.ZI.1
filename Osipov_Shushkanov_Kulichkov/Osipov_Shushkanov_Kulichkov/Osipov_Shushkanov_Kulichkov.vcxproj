@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{F1E75D0A-1401-458E-9BA7-34551FAB87BA}</ProjectGuid>
+    <ProjectGuid>{0A50BF8A-4F8D-445B-90FF-07706C073622}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>Osipov_Shushkanov_Kulichkov</RootNamespace>
   </PropertyGroup>
@@ -20,7 +20,7 @@
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v120</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
