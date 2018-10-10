@@ -1,5 +1,0 @@
-﻿  stdafx.cpp
-  Adashmel.cpp
-f:\adashmel\adashmel\adashmel.cpp(19): warning C4101: 'name': unreferenced local variable
-f:\adashmel\adashmel\adashmel.cpp(23): warning C4101: 'k': unreferenced local variable
-  Adashmel.vcxproj -> F:\Adashmel\Debug\Adashmel.exe
